@@ -1,6 +1,10 @@
 #!/bin/bash
 
 echo "パスワードマネージャーへようこそ!"
+echo "次の選択肢から入力してください(Add Password/Get Password/Exit):"
+read choices
+
+
 echo "サービス名を入力してください:"
 read service
 echo "ユーザー名を入力してくだし:"
