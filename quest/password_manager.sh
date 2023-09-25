@@ -14,7 +14,15 @@ case $choices in
 	;;
     "Get Password")
 	read -p "サービス名を入力してください:" service
-	
+	password=$(grep "$service:" passwords.md | cut -d: -f3)
+	if [ -z "$password"]; then
+	    echo "そのサービスは登録されていません。"
+	else
+	    echo "サービス名:$service"
+	    echo "ユーザー名:$(grep "$service:" passwords.md | cut -d: -f2)"
+	    echo "パスワード:$password"
+	fi
+	;;
     "Exit")
 	echo "Thank you\033[31m! \033[m"
 	;;
